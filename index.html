@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brew Haven Café - Premium coffee, warm moments. Order online, reserve your table, and experience the finest coffee in town.">
+    <meta name="keywords" content="café, coffee, espresso, latte, premium coffee, coffee shop, brew haven">
+    <meta name="author" content="Brew Haven Café">
+    <meta property="og:title" content="Brew Haven Café - Fresh Coffee, Warm Moments">
+    <meta property="og:description" content="Experience premium coffee in a cozy atmosphere. Order online or reserve your table today.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brewhaven.cafe">
+    <title>Brew Haven Café - Fresh Coffee, Warm Moments</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body>
+    <!-- Grain Texture Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="loader-icon">
+                <i class="fas fa-mug-hot"></i>
+            </div>
+            <p>Brewing your experience<span class="loader-dots">...</span></p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-mug-hot"></i>
+                <span>Brew Haven</span>
+            </div>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="cart-btn" class="icon-btn" aria-label="Open cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <div class="user-menu-wrapper">
+                    <button id="login-btn" class="btn-primary">Login</button>
+                    <div class="user-dropdown" id="user-dropdown">
+                        <div class="user-dropdown-header" id="dropdown-user-name">
+                            <i class="fas fa-user-circle"></i>
+                            <span>Account</span>
+                        </div>
+                        <div class="user-dropdown-divider"></div>
+                        <button class="user-dropdown-item" id="btn-my-orders">
+                            <i class="fas fa-receipt"></i> My Orders
+                        </button>
+                        <button class="user-dropdown-item" id="btn-my-reservations">
+                            <i class="fas fa-calendar-check"></i> My Reservations
+                        </button>
+                        <div class="user-dropdown-divider"></div>
+                        <button class="user-dropdown-item logout" id="btn-logout">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                    </div>
+                </div>
+                <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="dribbble-hero">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        
+        <div class="dribbble-hero-container">
+            <!-- Left: Typography & Call to Action -->
+            <div class="hero-content-left">
+                <span class="hero-badge"><i class="fas fa-star"></i> Top Rated Café in NYC</span>
+                <h1 class="hero-headline">
+                    Awaken Your <br>
+                    <span class="serif-italic">Senses</span> with <br>
+                    Premium <span class="highlight-text">Roasts</span>.
+                </h1>
+                <p class="hero-subtext">
+                    Experience the finest handcrafted coffee in a cozy, premium atmosphere. We source ethically and brew passionately.
+                </p>
+                <div class="hero-action-group">
+                    <a href="#menu" class="btn btn-primary btn-large">View Menu <i class="fas fa-arrow-right"></i></a>
+                    <div class="trusted-by">
+                        <div class="avatar-stack">
+                            <img src="https://i.pravatar.cc/100?img=47" alt="User">
+                            <img src="https://i.pravatar.cc/100?img=32" alt="User">
+                            <img src="https://i.pravatar.cc/100?img=12" alt="User">
+                        </div>
+                        <div class="trusted-text">
+                            <strong>4.9/5</strong> (2k+ Reviews)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Bento Image Grid -->
+            <div class="hero-bento-right">
+                <div class="bento-main">
+                    <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800" alt="Latte Art" class="bento-img">
+                    <div class="bento-glass-card">
+                        <div class="bento-icon-box"><i class="fas fa-coffee"></i></div>
+                        <div class="bento-card-text">
+                            <h4>Signature Brews</h4>
+                            <p>Handcrafted daily</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bento-side">
+                    <div class="bento-top">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800" alt="Cafe Interior" class="bento-img">
+                        <button class="play-video-btn"><i class="fas fa-play"></i></button>
+                    </div>
+                    <div class="bento-bottom">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400" alt="Coffee beans" class="bento-img">
+                        <div class="floating-tag">100% Organic</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Decorative Ribbon -->
+    <div class="ribbon-strip">
+        <div class="ribbon-content">
+            <span><i class="fas fa-leaf"></i> Ethically Sourced</span>
+            <span><i class="fas fa-award"></i> Award Winning Roasts</span>
+            <span><i class="fas fa-heart"></i> Handcrafted Daily</span>
+            <span><i class="fas fa-clock"></i> Open 7 Days</span>
+            <span><i class="fas fa-leaf"></i> Ethically Sourced</span>
+            <span><i class="fas fa-award"></i> Award Winning Roasts</span>
+            <span><i class="fas fa-heart"></i> Handcrafted Daily</span>
+            <span><i class="fas fa-clock"></i> Open 7 Days</span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">About Us</span>
+                <h2 class="section-title">Our Story</h2>
+                <p class="section-subtitle">Crafting moments since 2010</p>
+                <div class="section-ornament"><span></span><span></span><span></span></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>A Legacy of Premium Coffee</h3>
+                    <p>At Brew Haven, we believe every cup tells a story. Our journey began with a simple passion for exceptional coffee and a dream to create a space where people connect, relax, and savor life's precious moments.</p>
+                    <p>We source only the finest ethically-sourced beans from around the world, roasted to perfection by our master baristas. Every sip is a testament to our commitment to quality, sustainability, and the art of coffee making.</p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check-circle"></i> Premium ethically-sourced beans</li>
+                        <li><i class="fas fa-check-circle"></i> Expert master baristas</li>
+                        <li><i class="fas fa-check-circle"></i> Cozy, welcoming atmosphere</li>
+                        <li><i class="fas fa-check-circle"></i> Fresh baked pastries daily</li>
+                    </ul>
+                </div>
+                
+                <div class="about-stats fade-in">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <h3 class="counter" data-target="50000">0</h3>
+                        <p>Customers Served</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-mug-hot"></i>
+                        <h3 class="counter" data-target="150000">0</h3>
+                        <p>Coffee Cups Sold</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3 class="counter" data-target="14">0</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-star"></i>
+                        <h3 class="counter" data-target="4.9" data-decimal="true">0</h3>
+                        <p>Average Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">What We Serve</span>
+                <h2 class="section-title">Our Menu</h2>
+                <p class="section-subtitle">Discover our handcrafted selections</p>
+                <div class="section-ornament"><span></span><span></span><span></span></div>
+            </div>
+
+            <!-- Search & Filter -->
+            <div class="menu-controls fade-in">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="menu-search" placeholder="Search menu...">
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="coffee">Coffee</button>
+                    <button class="filter-btn" data-filter="cold-coffee">Cold Coffee</button>
+                    <button class="filter-btn" data-filter="pizza">Pizza</button>
+                    <button class="filter-btn" data-filter="sandwich">Sandwich</button>
+                    <button class="filter-btn" data-filter="desserts">Desserts</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menu-grid">
+                <!-- Coffee Items -->
+                <div class="menu-card fade-in" data-category="coffee">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400" alt="Espresso">
+                        <div class="menu-badge">Popular</div>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Classic Espresso</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                        <p class="description">Rich, bold, and perfectly extracted</p>
+                        <div class="menu-footer">
+                            <span class="price">$4.99</span>
+                            <button class="btn-add-cart" data-name="Classic Espresso" data-price="4.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card fade-in" data-category="coffee">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400" alt="Cappuccino">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Creamy Cappuccino</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.8</span>
+                        </div>
+                        <p class="description">Perfect balance of espresso and steamed milk</p>
+                        <div class="menu-footer">
+                            <span class="price">$5.49</span>
+                            <button class="btn-add-cart" data-name="Creamy Cappuccino" data-price="5.49">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card fade-in" data-category="coffee">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=400" alt="Latte">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Vanilla Latte</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                        <p class="description">Smooth espresso with vanilla and milk</p>
+                        <div class="menu-footer">
+                            <span class="price">$5.99</span>
+                            <button class="btn-add-cart" data-name="Vanilla Latte" data-price="5.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cold Coffee Items -->
+                <div class="menu-card fade-in" data-category="cold-coffee">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=400" alt="Iced Coffee">
+                        <div class="menu-badge">New</div>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Iced Caramel Macchiato</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                        <p class="description">Chilled espresso with caramel drizzle</p>
+                        <div class="menu-footer">
+                            <span class="price">$6.49</span>
+                            <button class="btn-add-cart" data-name="Iced Caramel Macchiato" data-price="6.49">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card fade-in" data-category="cold-coffee">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=400" alt="Cold Brew">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Cold Brew Classic</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7</span>
+                        </div>
+                        <p class="description">Slow-steeped for 20 hours</p>
+                        <div class="menu-footer">
+                            <span class="price">$5.99</span>
+                            <button class="btn-add-cart" data-name="Cold Brew Classic" data-price="5.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pizza Items -->
+                <div class="menu-card fade-in" data-category="pizza">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400" alt="Margherita Pizza">
+                        <div class="menu-badge">Best Seller</div>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Margherita Pizza</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                        <p class="description">Fresh mozzarella, tomatoes, basil</p>
+                        <div class="menu-footer">
+                            <span class="price">$12.99</span>
+                            <button class="btn-add-cart" data-name="Margherita Pizza" data-price="12.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card fade-in" data-category="pizza">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400" alt="Pepperoni Pizza">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Pepperoni Pizza</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.8</span>
+                        </div>
+                        <p class="description">Classic pepperoni with extra cheese</p>
+                        <div class="menu-footer">
+                            <span class="price">$14.99</span>
+                            <button class="btn-add-cart" data-name="Pepperoni Pizza" data-price="14.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sandwich Items -->
+                <div class="menu-card fade-in" data-category="sandwich">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400" alt="Club Sandwich">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Club Sandwich</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                        <p class="description">Chicken, bacon, lettuce, tomato</p>
+                        <div class="menu-footer">
+                            <span class="price">$9.99</span>
+                            <button class="btn-add-cart" data-name="Club Sandwich" data-price="9.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card fade-in" data-category="sandwich">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1550507992-eb63ffee0847?w=400" alt="Grilled Cheese">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Grilled Cheese Deluxe</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7</span>
+                        </div>
+                        <p class="description">Triple cheese blend on sourdough</p>
+                        <div class="menu-footer">
+                            <span class="price">$8.99</span>
+                            <button class="btn-add-cart" data-name="Grilled Cheese Deluxe" data-price="8.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-card fade-in" data-category="desserts">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400" alt="Chocolate Cake">
+                        <div class="menu-badge">Chef's Special</div>
+                    </div>
+                    <div class="menu-info">
+                        <h3>Chocolate Lava Cake</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                        <p class="description">Warm, gooey chocolate perfection</p>
+                        <div class="menu-footer">
+                            <span class="price">$7.99</span>
+                            <button class="btn-add-cart" data-name="Chocolate Lava Cake" data-price="7.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card fade-in" data-category="desserts">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400" alt="Croissant">
+                    </div>
+                    <div class="menu-info">
+                        <h3>Butter Croissant</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.8</span>
+                        </div>
+                        <p class="description">Flaky, buttery, freshly baked</p>
+                        <div class="menu-footer">
+                            <span class="price">$4.49</span>
+                            <button class="btn-add-cart" data-name="Butter Croissant" data-price="4.49">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card fade-in" data-category="desserts">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400" alt="Cheesecake">
+                    </div>
+                    <div class="menu-info">
+                        <h3>New York Cheesecake</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                        <p class="description">Creamy, rich, classic recipe</p>
+                        <div class="menu-footer">
+                            <span class="price">$6.99</span>
+                            <button class="btn-add-cart" data-name="New York Cheesecake" data-price="6.99">
+                                <i class="fas fa-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coffee Customizer Lab Section -->
+    <section id="customizer" class="customizer section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Brew Lab</h2>
+                <p class="section-subtitle">Design your own signature coffee creation</p>
+            </div>
+
+            <div class="customizer-container fade-in">
+                <!-- Visualizer Cup Container -->
+                <div class="visualizer-panel">
+                    <div class="steam-container" id="custom-steam">
+                        <span style="--i:1;"></span>
+                        <span style="--i:3;"></span>
+                        <span style="--i:2;"></span>
+                        <span style="--i:5;"></span>
+                        <span style="--i:4;"></span>
+                    </div>
+                    <div class="coffee-cup-container">
+                        <div class="cup-handle"></div>
+                        <div class="glass-cup">
+                            <div class="liquid-layers">
+                                <div id="syrup-layer" class="liquid-layer syrup"></div>
+                                <div id="base-layer" class="liquid-layer base"></div>
+                                <div id="milk-layer" class="liquid-layer milk"></div>
+                                <div id="topping-layer" class="liquid-layer topping"></div>
+                                <div id="drizzle-layer" class="liquid-layer drizzle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="customizer-display">
+                        <h3 id="custom-drink-name-display">My Dream Brew</h3>
+                        <p id="custom-drink-recipe">Classic Espresso Base</p>
+                        <div class="price-display">
+                            <span class="currency">$</span><span id="custom-price">3.50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customizer Options Panel -->
+                <div class="options-panel">
+                    <div class="custom-form-group">
+                        <label for="custom-name"><i class="fas fa-pen-nib"></i> Name Your Creation</label>
+                        <input type="text" id="custom-name" value="My Dream Brew" placeholder="e.g. Tejas's Golden Brew">
+                    </div>
+
+                    <div class="option-group" data-group="base">
+                        <h4>1. Select Base Drink</h4>
+                        <div class="option-grid">
+                            <div class="option-card active" data-value="espresso" data-price="3.50" data-color="#3A1E12" data-name="Classic Espresso">
+                                <i class="fas fa-mug-hot"></i>
+                                <span>Espresso</span>
+                                <small>+$3.50</small>
+                            </div>
+                            <div class="option-card" data-value="latte" data-price="4.20" data-color="#8B5E3C" data-name="Creamy Latte">
+                                <i class="fas fa-coffee"></i>
+                                <span>Latte Base</span>
+                                <small>+$4.20</small>
+                            </div>
+                            <div class="option-card" data-value="matcha" data-price="4.50" data-color="#556B2F" data-name="Zen Matcha">
+                                <i class="fas fa-leaf"></i>
+                                <span>Matcha Base</span>
+                                <small>+$4.50</small>
+                            </div>
+                            <div class="option-card" data-value="cocoa" data-price="4.00" data-color="#4E2F1D" data-name="Rich Cocoa">
+                                <i class="fas fa-fill-drip"></i>
+                                <span>Hot Cocoa</span>
+                                <small>+$4.00</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="option-group" data-group="milk">
+                        <h4>2. Choose Milk</h4>
+                        <div class="option-grid">
+                            <div class="option-card active" data-value="whole" data-price="0.00" data-color="#FFFDD0" data-name="Whole Milk">
+                                <i class="fas fa-tint"></i>
+                                <span>Whole Milk</span>
+                                <small>+$0.00</small>
+                            </div>
+                            <div class="option-card" data-value="almond" data-price="0.50" data-color="#FFF9E6" data-name="Almond Milk">
+                                <i class="fas fa-seedling"></i>
+                                <span>Almond Milk</span>
+                                <small>+$0.50</small>
+                            </div>
+                            <div class="option-card" data-value="oat" data-price="0.75" data-color="#FDF6E2" data-name="Oat Milk">
+                                <i class="fas fa-wheat-awn"></i>
+                                <span>Oat Milk</span>
+                                <small>+$0.75</small>
+                            </div>
+                            <div class="option-card" data-value="coconut" data-price="0.60" data-color="#FFFFFF" data-name="Coconut Milk">
+                                <i class="fas fa-circle-dot"></i>
+                                <span>Coconut Milk</span>
+                                <small>+$0.60</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="option-group" data-group="syrup">
+                        <h4>3. Sweetener & Syrup</h4>
+                        <div class="option-grid">
+                            <div class="option-card active" data-value="none" data-price="0.00" data-color="transparent" data-name="No Syrup">
+                                <i class="fas fa-ban"></i>
+                                <span>None</span>
+                                <small>+$0.00</small>
+                            </div>
+                            <div class="option-card" data-value="caramel" data-price="0.40" data-color="#D48A37" data-name="Caramel Syrup">
+                                <i class="fas fa-droplet"></i>
+                                <span>Caramel Syrup</span>
+                                <small>+$0.40</small>
+                            </div>
+                            <div class="option-card" data-value="vanilla" data-price="0.40" data-color="#F3E5AB" data-name="Vanilla Syrup">
+                                <i class="fas fa-wand-magic-sparkles"></i>
+                                <span>Vanilla Syrup</span>
+                                <small>+$0.40</small>
+                            </div>
+                            <div class="option-card" data-value="honey" data-price="0.50" data-color="#FFC000" data-name="Pure Honey">
+                                <i class="fas fa-honey-pot"></i>
+                                <span>Pure Honey</span>
+                                <small>+$0.50</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="option-group" data-group="topping">
+                        <h4>4. Premium Toppings</h4>
+                        <div class="option-grid">
+                            <div class="option-card active" data-value="none" data-price="0.00" data-color="transparent" data-name="No Topping">
+                                <i class="fas fa-ban"></i>
+                                <span>None</span>
+                                <small>+$0.00</small>
+                            </div>
+                            <div class="option-card" data-value="whip" data-price="0.60" data-color="#FFFFF0" data-name="Whipped Cream">
+                                <i class="fas fa-cloud"></i>
+                                <span>Whipped Cream</span>
+                                <small>+$0.60</small>
+                            </div>
+                            <div class="option-card" data-value="drizzle" data-price="0.30" data-color="#4E2F1D" data-name="Choco Drizzle">
+                                <i class="fas fa-paint-brush"></i>
+                                <span>Choco Drizzle</span>
+                                <small>+$0.30</small>
+                            </div>
+                            <div class="option-card" data-value="cinnamon" data-price="0.25" data-color="#C2B280" data-name="Cinnamon Dust">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Cinnamon Dust</span>
+                                <small>+$0.25</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="btn-add-custom" class="btn btn-primary btn-full">
+                        <i class="fas fa-cart-plus"></i> Add Custom Drink to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barista Quiz Section -->
+    <section id="quiz-section" class="quiz-section section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Virtual Barista</h2>
+                <p class="section-subtitle">Take our quick quiz to discover your perfect coffee match</p>
+            </div>
+
+            <div class="quiz-container fade-in" id="quiz-box">
+                <!-- Progress Bar -->
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress" id="quiz-progress"></div>
+                </div>
+
+                <!-- Quiz Step 1 -->
+                <div class="quiz-step active" data-step="1">
+                    <h3>1. How do you prefer your beverage temperature?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-card" data-key="temp" data-value="hot">
+                            <i class="fas fa-fire"></i>
+                            <h4>Warm & Steamy</h4>
+                            <p>Perfect for cozy, cold days</p>
+                        </div>
+                        <div class="quiz-card" data-key="temp" data-value="cold">
+                            <i class="fas fa-snowflake"></i>
+                            <h4>Chilled & Refreshing</h4>
+                            <p>Perfect to cool down and charge up</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Step 2 -->
+                <div class="quiz-step" data-step="2">
+                    <h3>2. How strong and bold do you like your coffee?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-card" data-key="bold" data-value="strong">
+                            <i class="fas fa-bolt"></i>
+                            <h4>Robust & Intense</h4>
+                            <p>Deep roasted, bold, and energizing</p>
+                        </div>
+                        <div class="quiz-card" data-key="bold" data-value="mild">
+                            <i class="fas fa-feather"></i>
+                            <h4>Smooth & Creamy</h4>
+                            <p>Mild, sweet, and velvety texture</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Step 3 -->
+                <div class="quiz-step" data-step="3">
+                    <h3>3. What flavor profile speaks to you today?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-card" data-key="flavor" data-value="sweet">
+                            <i class="fas fa-cookie-bite"></i>
+                            <h4>Sweet & Caramel</h4>
+                            <p>Vanilla, caramel, or honey sweetness</p>
+                        </div>
+                        <div class="quiz-card" data-key="flavor" data-value="chocolate">
+                            <i class="fas fa-candy-cane"></i>
+                            <h4>Rich Cocoa</h4>
+                            <p>Deep dark chocolate undertones</p>
+                        </div>
+                        <div class="quiz-card" data-key="flavor" data-value="pure">
+                            <i class="fas fa-mug-hot"></i>
+                            <h4>Pure Coffee</h4>
+                            <p>Unadulterated single-origin flavor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Step 4 -->
+                <div class="quiz-step" data-step="4">
+                    <h3>4. What's your current vibe or activity?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-card" data-key="mood" data-value="work">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>Productive Hustle</h4>
+                            <p>Focused on writing, coding, or studying</p>
+                        </div>
+                        <div class="quiz-card" data-key="mood" data-value="relax">
+                            <i class="fas fa-book-open"></i>
+                            <h4>Cozy Relaxation</h4>
+                            <p>Chilling with a book or soft music</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Result Step -->
+                <div class="quiz-step quiz-result-step" id="quiz-result">
+                    <div class="barista-avatar">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Barista Match</span>
+                    </div>
+                    <h3>Your Perfect Match:</h3>
+                    <div class="match-display-card">
+                        <img id="match-img" src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=400" alt="Recommended Drink">
+                        <div class="match-info">
+                            <h4 id="match-title">Caramel Macchiato</h4>
+                            <p id="match-desc">Chilled espresso with smooth milk and sweet caramel drizzle.</p>
+                            <span class="match-price" id="match-price">$5.99</span>
+                            <div class="match-actions">
+                                <button id="btn-add-match" class="btn btn-primary">
+                                    <i class="fas fa-cart-plus"></i> Add Match to Cart
+                                </button>
+                                <button id="btn-restart-quiz" class="btn btn-secondary">
+                                    <i class="fas fa-redo"></i> Retake Quiz
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Gallery</h2>
+                <p class="section-subtitle">Moments captured at Brew Haven</p>
+            </div>
+
+            <div class="gallery-grid fade-in">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600" alt="Coffee Art">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600" alt="Café Interior">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600" alt="Coffee Beans">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600" alt="Latte Art">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=600" alt="Pastries">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600" alt="Coffee Shop">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600" alt="Espresso">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600" alt="Cozy Corner">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Real reviews from coffee lovers</p>
+            </div>
+
+            <div class="reviews-slider fade-in">
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Sarah M.">
+                        <div>
+                            <h4>Sarah Mitchell</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"The best coffee I've ever had! The atmosphere is cozy and the staff is incredibly friendly. Brew Haven is my go-to spot for both work and relaxation."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="James K.">
+                        <div>
+                            <h4>James Anderson</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Amazing quality and service! Their espresso is perfectly crafted every time. The pizza is also a hidden gem. Highly recommend!"</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="Emily R.">
+                        <div>
+                            <h4>Emily Roberts</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Love the ambiance and the coffee is top-notch. The chocolate lava cake is to die for! Perfect place for dates and catch-ups."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Michael T.">
+                        <div>
+                            <h4>Michael Thompson</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Been coming here for 3 years now. The consistency in quality is remarkable. Staff remembers my order! That's what I call premium service."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="Lisa W.">
+                        <div>
+                            <h4>Lisa Williams</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="review-text">"My favorite café in the city! The cold brew is exceptional and the pastries are always fresh. A must-visit for coffee enthusiasts."</p>
+                </div>
+            </div>
+
+            <div class="reviews-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="reservation section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Reserve Your Table</h2>
+                <p class="section-subtitle">Book your perfect moment</p>
+            </div>
+
+            <div class="reservation-form fade-in">
+                <form id="reservation-form">
+                    <div class="form-group">
+                        <label for="res-name"><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" id="res-name" name="name" required placeholder="John Doe">
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="res-date"><i class="fas fa-calendar"></i> Date</label>
+                            <input type="date" id="res-date" name="date" required>
+                            <span class="error-message" id="date-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="res-time"><i class="fas fa-clock"></i> Time</label>
+                            <input type="time" id="res-time" name="time" required>
+                            <span class="error-message" id="time-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res-guests"><i class="fas fa-users"></i> Number of Guests</label>
+                        <select id="res-guests" name="guests" required>
+                            <option value="">Select guests</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6">6+ People</option>
+                        </select>
+                        <span class="error-message" id="guests-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res-phone"><i class="fas fa-phone"></i> Phone Number</label>
+                        <input type="tel" id="res-phone" name="phone" required placeholder="+1 (555) 123-4567">
+                        <span class="error-message" id="phone-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res-requests"><i class="fas fa-comment-dots"></i> Special Requests (Optional)</label>
+                        <textarea id="res-requests" name="requests" rows="3" placeholder="Any dietary needs, seating preferences, or special occasions..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-check-circle"></i> Reserve Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">We'd love to hear from you</p>
+            </div>
+
+            <div class="contact-content fade-in">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>123 Coffee Street, Downtown<br>New York, NY 10001</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:hello@brewhaven.cafe">hello@brewhaven.cafe</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Opening Hours</h4>
+                            <p>Mon - Fri: 7:00 AM - 10:00 PM<br>
+                            Sat - Sun: 8:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-yelp"></i></a>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form id="contact-form" class="contact-form-box">
+                        <h4><i class="fas fa-paper-plane"></i> Send us a Message</h4>
+                        <div class="form-group">
+                            <input type="text" id="contact-name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contact-email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="contact-subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contact-message" rows="4" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968459391!3d40.74881797932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1234567890"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        title="Brew Haven Café Location">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-mug-hot"></i>
+                        <span>Brew Haven</span>
+                    </div>
+                    <p>Crafting exceptional coffee experiences since 2010. Every cup tells a story.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Dine In</a></li>
+                        <li><a href="#">Takeaway</a></li>
+                        <li><a href="#">Catering</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers and updates</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Brew Haven Café. All rights reserved. | Designed with <i class="fas fa-heart"></i> for coffee lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <div class="cart-header-left">
+                <h3><i class="fas fa-shopping-bag"></i> Your Bag</h3>
+                <span class="cart-item-count" id="cart-item-count">0 items</span>
+            </div>
+            <button id="close-cart" class="cart-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+            <div class="cart-empty-state" id="cart-empty">
+                <div class="cart-empty-icon"><i class="fas fa-shopping-bag"></i></div>
+                <h4>Your bag is empty</h4>
+                <p>Discover our handcrafted coffees and treats</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cart-footer">
+            <div class="cart-promo">
+                <i class="fas fa-gift"></i>
+                <span>Free delivery on orders over $25</span>
+            </div>
+            <div class="cart-total-section">
+                <div class="cart-subtotal">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="cart-total">
+                    <span>Total</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+            <button id="checkout-btn" class="checkout-btn">
+                <span>Proceed to Checkout</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            <p class="cart-secure"><i class="fas fa-lock"></i> Secure checkout · SSL encrypted</p>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <!-- Login/Signup Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content auth-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            
+            <div class="auth-brand">
+                <i class="fas fa-mug-hot"></i>
+                <span>Brew Haven</span>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="signup">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form active">
+                <h2>Welcome Back</h2>
+                <p class="auth-desc">Sign in to track orders & earn rewards</p>
+                <div class="form-group">
+                    <label for="login-email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="login-email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="login-password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="login-password" required placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Login <i class="fas fa-arrow-right"></i></button>
+                <p class="auth-switch">Don't have an account? <a href="#" data-switch="signup">Sign up</a></p>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signup-form" class="auth-form">
+                <h2>Create Account</h2>
+                <p class="auth-desc">Join us and start brewing your story</p>
+                <div class="form-group">
+                    <label for="signup-name"><i class="fas fa-user"></i> Full Name</label>
+                    <input type="text" id="signup-name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="signup-email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="signup-password" required placeholder="Create password">
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm"><i class="fas fa-lock"></i> Confirm Password</label>
+                    <input type="password" id="signup-confirm" required placeholder="Confirm password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Create Account <i class="fas fa-arrow-right"></i></button>
+                <p class="auth-switch">Already have an account? <a href="#" data-switch="login">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content checkout-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            
+            <div class="checkout-header">
+                <div class="checkout-steps-indicator">
+                    <div class="checkout-step-dot active"></div>
+                    <div class="checkout-step-line"></div>
+                    <div class="checkout-step-dot"></div>
+                    <div class="checkout-step-line"></div>
+                    <div class="checkout-step-dot"></div>
+                </div>
+                <h2>Complete Your Order</h2>
+                <p class="checkout-subtitle">Just a few details and your handcrafted brew is on its way</p>
+            </div>
+            
+            <div class="checkout-summary">
+                <div class="checkout-summary-header">
+                    <h3><i class="fas fa-receipt"></i> Order Summary</h3>
+                    <span class="checkout-item-count" id="checkout-item-count">0 items</span>
+                </div>
+                <div id="checkout-items" class="checkout-items-list"></div>
+                <div class="checkout-divider"></div>
+                <div class="checkout-total-section">
+                    <div class="checkout-row">
+                        <span>Subtotal</span>
+                        <span id="checkout-subtotal">$0.00</span>
+                    </div>
+                    <div class="checkout-row">
+                        <span>Delivery</span>
+                        <span class="checkout-free">FREE</span>
+                    </div>
+                    <div class="checkout-row total">
+                        <span>Total</span>
+                        <span id="checkout-total">$0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <form id="checkout-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkout-name"><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" id="checkout-name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-phone"><i class="fas fa-phone"></i> Phone</label>
+                        <input type="tel" id="checkout-phone" required placeholder="+1 (555) 123-4567">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="checkout-email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="checkout-email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="checkout-address"><i class="fas fa-map-marker-alt"></i> Delivery Address</label>
+                    <textarea id="checkout-address" required placeholder="Enter your full address"></textarea>
+                </div>
+                <button type="submit" class="place-order-btn">
+                    <span class="place-order-text">
+                        <i class="fas fa-lock"></i> Place Secure Order
+                    </span>
+                    <span class="place-order-price" id="place-order-price">$0.00</span>
+                </button>
+                <div class="checkout-trust">
+                    <span><i class="fas fa-shield-alt"></i> Secure Payment</span>
+                    <span><i class="fas fa-undo"></i> Easy Refunds</span>
+                    <span><i class="fas fa-headset"></i> 24/7 Support</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/15551234567" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Order Tracker Modal -->
+    <div id="tracker-modal" class="modal">
+        <div class="modal-content tracker-content">
+            <button class="modal-close" id="close-tracker"><i class="fas fa-times"></i></button>
+            <h2><i class="fas fa-map-marker-alt"></i> Live Brew Tracker</h2>
+            <p class="tracker-subtitle">Watch your premium creation come to life in real-time</p>
+            
+            <div class="tracker-cup-visualizer">
+                <div class="tracker-cup">
+                    <div class="tracker-liquid" id="tracker-liquid"></div>
+                    <div class="tracker-cream" id="tracker-cream"></div>
+                    <div class="tracker-latte-art" id="tracker-art">🎨</div>
+                </div>
+                <div class="tracker-grinder" id="tracker-grinder"><i class="fas fa-cog fa-spin"></i></div>
+                <div class="tracker-steam-cloud" id="tracker-steam">💨</div>
+            </div>
+
+            <!-- Steps Progress Bar -->
+            <div class="tracker-progress-container">
+                <div class="tracker-progress-bar" id="tracker-progress-bar"></div>
+                <div class="tracker-steps">
+                    <div class="tracker-step active" id="step-1">
+                        <div class="step-num"><i class="fas fa-receipt"></i></div>
+                        <span>Received</span>
+                    </div>
+                    <div class="tracker-step" id="step-2">
+                        <div class="step-num"><i class="fas fa-cog"></i></div>
+                        <span>Grinding</span>
+                    </div>
+                    <div class="tracker-step" id="step-3">
+                        <div class="step-num"><i class="fas fa-coffee"></i></div>
+                        <span>Brewing</span>
+                    </div>
+                    <div class="tracker-step" id="step-4">
+                        <div class="step-num"><i class="fas fa-palette"></i></div>
+                        <span>Arting</span>
+                    </div>
+                    <div class="tracker-step" id="step-5">
+                        <div class="step-num"><i class="fas fa-bell"></i></div>
+                        <span>Ready!</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tracker-status-box">
+                <h3 id="tracker-status-title">Order Received</h3>
+                <p id="tracker-status-desc">We have received your coffee order and our master baristas are preparing to brew.</p>
+            </div>
+            
+            <div class="tracker-actions">
+                <button id="btn-close-tracker-done" class="btn btn-primary btn-full" style="display:none;">
+                    <i class="fas fa-check-circle"></i> Enjoy Your Brew!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Ambient Audio Console -->
+    <div id="ambient-console" class="ambient-console">
+        <button id="ambient-trigger" class="ambient-trigger" aria-label="Open Cozy Ambience Panel">
+            <i class="fas fa-headphones"></i>
+            <span class="music-wave">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </button>
+        
+        <div class="ambient-panel">
+            <div class="ambient-header">
+                <h3><i class="fas fa-sliders-h"></i> Cozy Ambient Mixer</h3>
+                <button id="close-ambient" class="ambient-close-btn"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            
+            <div class="ambient-controls">
+                <!-- Master Power -->
+                <button id="ambient-master-btn" class="ambient-master-btn">
+                    <i class="fas fa-play"></i> Start Soundscape
+                </button>
+                
+                <!-- Track 1: Jazz Piano -->
+                <div class="ambient-track">
+                    <div class="track-info">
+                        <span><i class="fas fa-music"></i> Café Jazz Lounge</span>
+                        <span class="track-val" id="val-jazz">50%</span>
+                    </div>
+                    <div class="track-slider-container">
+                        <button class="track-toggle" id="toggle-jazz" data-track="jazz"><i class="fas fa-volume-up"></i></button>
+                        <input type="range" id="slider-jazz" min="0" max="1" step="0.05" value="0.5" class="ambient-slider">
+                    </div>
+                </div>
+
+                <!-- Track 2: Rain Sound -->
+                <div class="ambient-track">
+                    <div class="track-info">
+                        <span><i class="fas fa-cloud-rain"></i> Rainy Day Window</span>
+                        <span class="track-val" id="val-rain">30%</span>
+                    </div>
+                    <div class="track-slider-container">
+                        <button class="track-toggle" id="toggle-rain" data-track="rain"><i class="fas fa-volume-up"></i></button>
+                        <input type="range" id="slider-rain" min="0" max="1" step="0.05" value="0.3" class="ambient-slider">
+                    </div>
+                </div>
+
+                <!-- Track 3: Fireplace -->
+                <div class="ambient-track">
+                    <div class="track-info">
+                        <span><i class="fas fa-fire"></i> Cozy Crackling Fire</span>
+                        <span class="track-val" id="val-fire">30%</span>
+                    </div>
+                    <div class="track-slider-container">
+                        <button class="track-toggle" id="toggle-fire" data-track="fire"><i class="fas fa-volume-up"></i></button>
+                        <input type="range" id="slider-fire" min="0" max="1" step="0.05" value="0.3" class="ambient-slider">
+                    </div>
+                </div>
+
+                <!-- Track 4: Cafe Murmur -->
+                <div class="ambient-track">
+                    <div class="track-info">
+                        <span><i class="fas fa-mug-hot"></i> Coffee Shop Chatter</span>
+                        <span class="track-val" id="val-chatter">40%</span>
+                    </div>
+                    <div class="track-slider-container">
+                        <button class="track-toggle" id="toggle-chatter" data-track="chatter"><i class="fas fa-volume-up"></i></button>
+                        <input type="range" id="slider-chatter" min="0" max="1" step="0.05" value="0.4" class="ambient-slider">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Orders Modal -->
+    <div id="orders-modal" class="modal">
+        <div class="modal-content modal-lg">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title"><i class="fas fa-receipt"></i> My Orders</h2>
+            <div id="orders-list" class="orders-list">
+                <div class="loading-spinner"><i class="fas fa-spinner fa-spin"></i> Loading orders...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Reservations Modal -->
+    <div id="reservations-modal" class="modal">
+        <div class="modal-content modal-lg">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-title"><i class="fas fa-calendar-check"></i> My Reservations</h2>
+            <div id="reservations-list" class="orders-list">
+                <div class="loading-spinner"><i class="fas fa-spinner fa-spin"></i> Loading reservations...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
